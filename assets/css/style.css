@@ -54,25 +54,39 @@ img{max-width:100%}
 .trust{display:flex;gap:1.8em;flex-wrap:wrap;margin-top:2.2em;font-size:.95rem;color:rgba(255,255,255,.85)}
 .trust strong{color:#fff;font-size:1.3rem;display:block}
 
-/* services circle */
+/* services section + Original PURUS Radial-Widget (1:1 portiert) */
 .services-section{background:var(--bg-soft);padding:56px 20px 70px;text-align:center}
 .section-head h2{font-size:2rem;margin:0}
 .section-head p{color:var(--muted);margin:.3em 0 0}
-.ring-wrap{display:flex;justify-content:center;margin:30px auto 0}
-.ring{position:relative;width:560px;height:560px;list-style:none;padding:0;margin:0;
-  background:radial-gradient(circle at center, #fff 46%, var(--ring-bg) 47%, var(--ring-bg) 100%);border-radius:50%}
-.ring>li{position:absolute;left:50%;top:50%;width:104px;height:104px;margin:0}
-.ring-center{transform:translate(-50%,-50%)}
-.ring-btn{width:104px;height:104px;border-radius:50%;background:linear-gradient(160deg,var(--blue-mid),var(--blue));
-  color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25em;text-align:center;
-  box-shadow:0 8px 18px rgba(40,63,102,.28);transition:.2s;padding:6px}
-.ring-btn i{font-size:1.5rem}
-.ring-btn span{font-size:.66rem;font-weight:600;line-height:1.1}
-.ring-btn:hover{transform:scale(1.09);text-decoration:none;background:linear-gradient(160deg,var(--blue),var(--blue-dark))}
-.ring-center .mascot{width:220px;height:220px;border-radius:50%;background:#fff;display:grid;place-items:center;position:relative;box-shadow:inset 0 0 0 8px #fff, 0 0 0 2px var(--ring-bg)}
-.mascot img{width:180px;height:auto}
-.mascot-fallback{position:absolute;font-weight:800;font-size:2.4rem;color:var(--blue);letter-spacing:1px}
-.mascot img+.mascot-fallback{display:none}
+.radial-stage{display:flex;justify-content:center;margin:24px auto 0}
+.radial-menu{
+  --size:600px; --radius:240px; --btn-size:100px; --center-size:300px;
+  --r-ring-bg:#f8f9fa;
+  --r-btn-bg:linear-gradient(135deg,#7492c1 0%,#2c5aa0 100%);
+  --r-btn-bg-hover:linear-gradient(135deg,#1e3c72 0%,#2c5aa0 100%);
+  --r-btn-txt:#fff; --r-shadow:0 5px 15px rgba(0,0,0,.1);
+  position:relative;width:var(--size);height:var(--size);display:grid;place-items:center;border-radius:50%;overflow:visible}
+.radial-menu::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle at center, transparent calc(var(--center-size)/2 + 10px), var(--r-ring-bg) calc(var(--center-size)/2 + 11px));z-index:0}
+.center-image{position:relative;z-index:2;width:var(--center-size);height:var(--center-size);border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;padding:1rem;text-align:center}
+.center-image img{width:80%;height:80%;object-fit:contain;display:block;transition:opacity .32s ease, transform .32s ease;opacity:1;transform:translateY(0);z-index:1}
+.center-image.has-text img{opacity:0;transform:translateY(-6px);pointer-events:none}
+.center-texts{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:.6rem;z-index:3;pointer-events:none;margin:0}
+.center-texts > div{display:none;opacity:0;transform:translateY(4px);transition:opacity .3s ease, transform .3s ease;font-size:.95rem;color:#222;line-height:1.4;max-width:220px}
+.center-texts > div.active{display:block;opacity:1;transform:translateY(0)}
+.items{position:absolute;inset:0;list-style:none;margin:0;padding:0;z-index:1}
+.items > li{position:absolute;top:50%;left:50%}
+.items > li .r-btn{position:absolute;top:0;left:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:var(--btn-size);height:var(--btn-size);border-radius:999px;background:var(--r-btn-bg);color:var(--r-btn-txt);
+  text-decoration:none;font-size:14px;font-weight:600;box-shadow:var(--r-shadow);
+  transition:transform .3s ease, background-color .2s ease, box-shadow .2s ease;
+  transform:rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle))) translate(-50%,-50%);
+  text-align:center;padding:6px;white-space:normal;word-break:break-word;line-height:1.1}
+.items > li .r-btn i{font-size:20px;margin-bottom:4px}
+.items > li .r-btn:hover{background:var(--r-btn-bg-hover);
+  transform:rotate(var(--angle)) translate(calc(var(--radius) + 10px)) rotate(calc(-1 * var(--angle))) translate(-50%,-50%)}
+.items > li .r-btn.r-btn--flag{background:linear-gradient(135deg,#E0A24E 0%,#cf8f39 100%);color:#3a2a06}
+.items > li .r-btn.r-btn--flag:hover{background:linear-gradient(135deg,#cf8f39 0%,#b97f2c 100%)}
 
 /* cards */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:10px}
@@ -169,9 +183,6 @@ img{max-width:100%}
 /* flagship: Dachrinnenreinigung */
 .nav-flagship{background:rgba(224,162,78,.15);color:var(--cta-dark) !important;font-weight:600 !important;border:1px solid rgba(224,162,78,.5)}
 .nav-flagship:hover{background:var(--cta) !important;color:#3a2a06 !important}
-.ring-btn--flag{background:linear-gradient(160deg,var(--cta),var(--cta-dark)) !important;color:#3a2a06 !important;
-  box-shadow:0 8px 22px rgba(224,162,78,.5) !important;transform:scale(1.06)}
-.ring-btn--flag:hover{transform:scale(1.15) !important;background:linear-gradient(160deg,var(--cta-dark),#b97f2c) !important}
 .scard{position:relative}
 .scard-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--cta);color:#3a2a06;
   font-size:.68rem;font-weight:700;padding:.25em .8em;border-radius:999px;white-space:nowrap;letter-spacing:.3px}
@@ -204,8 +215,9 @@ img{max-width:100%}
   .value-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
   .footwrap{grid-template-columns:1fr 1fr}
-  .ring{transform:scale(.8)}
-  .ring-wrap{height:470px;align-items:center}
+  .radial-menu{--size:480px;--radius:192px;--btn-size:86px;--center-size:236px}
+  .items > li .r-btn{font-size:12px}
+  .items > li .r-btn i{font-size:16px}
 }
 @media(max-width:680px){
   .burger{display:inline-flex;font-size:1.8rem;color:var(--blue-dark);cursor:pointer;padding:.2em}
@@ -214,7 +226,7 @@ img{max-width:100%}
   .mainnav>a,.dropbtn{padding:.8em}
   .dropdown .dropcontent{position:static;display:block;box-shadow:none;border:none;padding-left:1em}
   .dropdown:hover .dropcontent{display:block}
-  .ring-wrap{display:none}
+  .radial-stage{display:none}
   .mobile-only{display:grid}
   .footwrap{grid-template-columns:1fr}
   .hero h1{font-size:1.8rem}
