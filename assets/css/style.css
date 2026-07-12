@@ -156,6 +156,19 @@ img{max-width:100%}
 .orte-grid{display:grid;gap:22px}
 .ort-block{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
 .ort-block h2{margin:0 0 .2em}
+/* Einsatzorte-Reiter */
+.orte-tabs{max-width:1000px;margin:0 auto;padding:0 20px 10px;position:relative}
+.orte-tabs .ot-radio{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.ot-bar{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.ot-bar label{cursor:pointer;padding:11px 22px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:600;color:var(--blue);transition:background .15s,color .15s}
+.ot-bar label:hover{background:var(--bg-soft)}
+#ot-haupt:checked~.ot-bar label[for="ot-haupt"],#ot-weitere:checked~.ot-bar label[for="ot-weitere"]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.ot-pane{display:none}
+#ot-haupt:checked~.ot-pane.ot-haupt{display:block}
+#ot-weitere:checked~.ot-pane.ot-weitere{display:block}
+.ot-hint{color:var(--muted);margin-bottom:22px;line-height:1.6}
+.weitere-region{margin-bottom:24px}
+.weitere-region h3{margin:0 0 12px;color:var(--ink,#22314d);font-size:1.15rem}
 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:34px}
