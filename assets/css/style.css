@@ -26,6 +26,7 @@ img{max-width:100%}
 .logo{display:flex;align-items:center;gap:.6em;font-weight:800;color:var(--blue-dark)}
 .logo:hover{text-decoration:none}
 .logo-badge{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:1.1rem}
+.logo-img{width:42px;height:42px;object-fit:contain}
 .logo-text{display:flex;flex-direction:column;line-height:1;font-size:1.15rem;letter-spacing:.5px}
 .logo-text small{font-size:.62rem;font-weight:500;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
 .mainnav{display:flex;align-items:center;gap:.4em}
