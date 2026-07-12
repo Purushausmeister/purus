@@ -1,0 +1,4 @@
+Bitte hier ablegen:
+- purus-maskottchen.png  (der Waschbär fürs Kreis-Widget, Originaldatei von der alten Seite)
+- favicon.png            (kleines Logo, 48x48 oder 64x64)
+Solange diese fehlen, zeigt das Widget den Schriftzug PURUS als Platzhalter.
