@@ -95,27 +95,24 @@
   </div>
   <div class="contact-form">
     <h2>Anfrage senden</h2>
-    <!-- Versand per FormSubmit direkt an info@purus-hausmeisterservice.de. Beim ersten Absenden kommt eine
-         einmalige Bestätigungs-E-Mail von FormSubmit – Link darin klicken, dann ist es aktiv.
-         Details/Alternativen siehe README. -->
-    <form action="https://formsubmit.co/info@purus-hausmeisterservice.de" method="POST">
-      <input type="hidden" name="_subject" value="Neue Anfrage über purus-hausmeisterservice.de">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://www.purus-hausmeisterservice.de/danke/">
-      <input type="text" name="_honey" style="display:none">
-      <label>Name<input type="text" name="Name" required></label>
-      <label>E-Mail<input type="email" name="E-Mail" required></label>
-      <label>Telefon<input type="tel" name="Telefon"></label>
+    <p class="form-error" id="formError" hidden>Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an: <a href="tel:+4981415098951">+49 8141 5098951</a>.</p>
+    <!-- Versand über den Strato-Mailer (kontakt.php auf dem Strato-Webspace) an info@purus-hausmeisterservice.de. -->
+    <form action="https://email.purus-hausmeisterservice.de/kontakt.php" method="POST">
+      <!-- Honeypot gegen Spam: für echte Nutzer unsichtbar, Bots füllen es aus -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <label>Name<input type="text" name="name" required></label>
+      <label>E-Mail<input type="email" name="email" required></label>
+      <label>Telefon<input type="tel" name="phone"></label>
       <label>Gewünschte Leistung
-        <select name="Leistung">
+        <select name="service">
           <option>Hausmeisterservice</option><option>Gebäudereinigung</option><option>Winterdienst</option><option>Gartenarbeiten</option><option>Glasreinigung</option><option>Büroreinigung</option><option>Dachrinnenreinigung</option><option>Tiefgaragenreinigung</option><option>Bauendreinigung</option><option>Entrümpelung</option><option>Transporte</option><option>Luftbildaufnahmen</option><option>Schilder gravieren</option>
         </select>
       </label>
-      <label>Ihre Nachricht<textarea name="Nachricht" rows="5" required></textarea></label>
-      <label class="checkbox"><input type="checkbox" required> Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen und stimme zu.</label>
+      <label>Ihre Nachricht<textarea name="message" rows="5" required></textarea></label>
+      <label class="checkbox"><input type="checkbox" name="privacy" required> Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen und stimme zu.</label>
       <button type="submit" class="btn btn-cta">Anfrage absenden</button>
     </form>
+    <script>if(location.search.indexOf('fehler=1')>-1){var e=document.getElementById('formError');if(e)e.hidden=false;}</script>
   </div>
 </section>
 
