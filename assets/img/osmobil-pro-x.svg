@@ -1,40 +1,62 @@
-<svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mobile Osmoseanlage OSMOBIL PRO X">
+<svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OSMOBIL PRO X – mobile Reinstwasseranlage auf Transportwagen">
   <defs>
-    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#eef2f8"/><stop offset="0.5" stop-color="#cdd6e4"/><stop offset="1" stop-color="#aeb9cb"/>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f6fa"/><stop offset="0.5" stop-color="#d3dae5"/><stop offset="1" stop-color="#a9b3c2"/>
     </linearGradient>
-    <linearGradient id="cyl" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#c6d0df"/><stop offset="0.5" stop-color="#eef3fa"/><stop offset="1" stop-color="#b3becd"/>
+    <linearGradient id="steeltop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c3ccda"/><stop offset="0.5" stop-color="#eef2f8"/><stop offset="1" stop-color="#b2bcca"/>
+    </linearGradient>
+    <linearGradient id="cart" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#cfe0f2"/><stop offset="0.5" stop-color="#eef7ff"/><stop offset="1" stop-color="#b9d3ea"/>
     </linearGradient>
   </defs>
-  <rect x="0" y="0" width="460" height="340" rx="22" fill="#eef2f9"/>
-  <ellipse cx="230" cy="304" rx="168" ry="16" fill="#dbe3f0"/>
-  <!-- Rahmen / Griff -->
-  <path d="M318 96 q46 -6 46 34 l0 118" fill="none" stroke="#7b8798" stroke-width="9" stroke-linecap="round"/>
-  <!-- Korpus Edelstahl -->
-  <rect x="128" y="96" width="196" height="158" rx="16" fill="url(#steel)" stroke="#93a0b3" stroke-width="2"/>
+  <rect x="0" y="0" width="460" height="360" rx="22" fill="#eef2f9"/>
+  <ellipse cx="238" cy="332" rx="182" ry="15" fill="#dbe3f0"/>
+
+  <!-- Griffbügel -->
+  <path d="M300 252 L300 70 Q300 58 312 58 L358 58" fill="none" stroke="#8b96a6" stroke-width="9" stroke-linecap="round"/>
+  <path d="M176 252 L176 100" fill="none" stroke="#8b96a6" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Zwei Filter-/Membranbehälter oben -->
+  <g>
+    <rect x="176" y="94" width="40" height="92" rx="16" fill="url(#cart)" stroke="#93a3b6" stroke-width="2"/>
+    <rect x="176" y="94" width="40" height="18" rx="9" fill="#c4d4e6"/>
+    <rect x="240" y="94" width="40" height="92" rx="16" fill="url(#cart)" stroke="#93a3b6" stroke-width="2"/>
+    <rect x="240" y="94" width="40" height="18" rx="9" fill="#c4d4e6"/>
+    <g fill="#8fb6dc" opacity="0.6">
+      <rect x="184" y="120" width="24" height="3" rx="1.5"/><rect x="184" y="132" width="24" height="3" rx="1.5"/><rect x="184" y="144" width="24" height="3" rx="1.5"/>
+      <rect x="248" y="120" width="24" height="3" rx="1.5"/><rect x="248" y="132" width="24" height="3" rx="1.5"/><rect x="248" y="144" width="24" height="3" rx="1.5"/>
+    </g>
+  </g>
+
+  <!-- Edelstahl-Korpus -->
+  <rect x="150" y="182" width="196" height="114" rx="10" fill="url(#steel)" stroke="#93a0b3" stroke-width="2"/>
+  <rect x="150" y="182" width="196" height="14" rx="7" fill="url(#steeltop)"/>
+
+  <!-- Branding -->
+  <text x="248" y="224" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#33517F" text-anchor="middle">osmobil<tspan dx="3" fill="#8895a8" font-size="11" font-weight="700">PRO X</tspan></text>
+
   <!-- Bedienpanel -->
-  <rect x="150" y="112" width="152" height="60" rx="9" fill="#22314d"/>
-  <!-- TDS-Display -->
-  <rect x="164" y="124" width="70" height="34" rx="5" fill="#0e6b4c"/>
-  <text x="199" y="146" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#7dffc4" text-anchor="middle">000 ppm</text>
-  <text x="199" y="167" font-family="Arial, sans-serif" font-size="8" fill="#9fb4c9" text-anchor="middle">TDS</text>
-  <!-- Regler -->
-  <circle cx="258" cy="134" r="10" fill="#5b6270"/>
-  <circle cx="284" cy="134" r="10" fill="#5b6270"/>
-  <circle cx="258" cy="134" r="3" fill="#cfd8e6"/><circle cx="284" cy="134" r="3" fill="#cfd8e6"/>
-  <!-- Membran-/Filterzylinder -->
-  <rect x="146" y="182" width="30" height="66" rx="13" fill="url(#cyl)" stroke="#93a0b3" stroke-width="1.5"/>
-  <rect x="182" y="182" width="30" height="66" rx="13" fill="url(#cyl)" stroke="#93a0b3" stroke-width="1.5"/>
-  <!-- Reinstwasser-Schlauch (Coil) -->
-  <circle cx="272" cy="210" r="30" fill="none" stroke="#4aa3e0" stroke-width="8"/>
-  <circle cx="272" cy="210" r="17" fill="none" stroke="#4aa3e0" stroke-width="8"/>
+  <rect x="164" y="238" width="168" height="48" rx="7" fill="#20304a"/>
+  <rect x="172" y="246" width="70" height="14" rx="3" fill="#3aa564"/>
+  <text x="207" y="256" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#eafff2" text-anchor="middle">REINWASSER</text>
+  <rect x="172" y="263" width="70" height="15" rx="2" fill="#0e2a1e"/>
+  <text x="207" y="274" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" fill="#7dffc4" text-anchor="middle">360 · 005</text>
+  <!-- Knöpfe -->
+  <circle cx="258" cy="262" r="7" fill="#5b6270"/><circle cx="258" cy="262" r="2.5" fill="#cfd8e6"/>
+  <circle cx="276" cy="262" r="7" fill="#5b6270"/><circle cx="276" cy="262" r="2.5" fill="#cfd8e6"/>
+  <!-- Manometer -->
+  <circle cx="304" cy="262" r="15" fill="#f6f8fc" stroke="#93a0b3" stroke-width="2"/>
+  <line x1="304" y1="262" x2="313" y2="254" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="304" cy="262" r="2" fill="#20304a"/>
+
   <!-- Räder -->
-  <circle cx="168" cy="262" r="22" fill="#2f333c"/><circle cx="168" cy="262" r="8" fill="#5b6270"/>
-  <circle cx="286" cy="262" r="22" fill="#2f333c"/><circle cx="286" cy="262" r="8" fill="#5b6270"/>
+  <circle cx="184" cy="300" r="26" fill="#2f333c"/><circle cx="184" cy="300" r="9" fill="#5b6270"/>
+  <circle cx="314" cy="300" r="26" fill="#2f333c"/><circle cx="314" cy="300" r="9" fill="#5b6270"/>
+
   <!-- Wassertropfen-Badge -->
-  <g transform="translate(360,150)">
-    <path d="M0 -30 C 20 -6 26 6 26 16 A26 26 0 1 1 -26 16 C -26 6 -20 -6 0 -30 Z" fill="#4aa3e0"/>
-    <path d="M-8 8 a12 12 0 0 0 12 12" fill="none" stroke="#dff0ff" stroke-width="4" stroke-linecap="round"/>
+  <g transform="translate(392,148)">
+    <path d="M0 -28 C 18 -6 24 6 24 15 A24 24 0 1 1 -24 15 C -24 6 -18 -6 0 -28 Z" fill="#4aa3e0"/>
+    <path d="M-7 7 a11 11 0 0 0 11 11" fill="none" stroke="#dff0ff" stroke-width="4" stroke-linecap="round"/>
   </g>
 </svg>
